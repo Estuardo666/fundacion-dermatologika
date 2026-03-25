@@ -1,0 +1,66 @@
+// Configuracion del generador y la fuente de datos
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+// Modelo para las Sedes (Matriz, Centro, San Cayetano)
+model Sede {
+  id         Int      @id @default(autoincrement())
+  nombre     String   // Ej: Matriz Principal
+  direccion  String   // Ej: Clodoveo Jaramillo y Virgilio Abarca
+  telefono   String   // Ej: 0982740049
+  lat        Float?
+  lng        Float?
+  referencia String?  // Detalle adicional de ubicacion
+  createdAt  DateTime @default(now())
+}
+
+// Modelo para Proyectos Sociales y Convenios MIES
+model ProyectoSocial {
+  id          Int      @id @default(autoincrement())
+  pretitulo   String   // Obligatorio: Ej: "PROGRAMA NACIONAL"
+  titulo      String   // Ej: "Centros de Desarrollo Infantil (CDI)"
+  descripcion String   @db.Text
+  tipo        String   // CDI, Alimentacion, Brigada Medica
+  imagenUrl   String?
+  activo      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+// Modelo para Campanas de Concienciacion (Kerly, Cancer de piel)
+model Campania {
+  id        Int      @id @default(autoincrement())
+  pretitulo String   // Obligatorio: Ej: "DERMATOLOGIA SOCIAL"
+  nombre    String   // Ej: "Campana Kerly: Vitiligo sin Bullying"
+  slug      String   @unique
+  contenido String   @db.Text
+  metaVenta String?  // Para productos asociados si aplica
+  imagenUrl String?
+  createdAt DateTime @default(now())
+}
+
+// Modelo para Servicios Medicos y Educacion
+model Servicio {
+  id          Int    @id @default(autoincrement())
+  pretitulo   String // Obligatorio: Ej: "CUIDADO ESPECIALIZADO"
+  nombre      String // Ej: "Fotoproteccion y Prevencion"
+  descripcion String @db.Text
+  icono       String? // Nombre del icono de Lucide
+  orden       Int    @default(0)
+}
+
+model Configuracion {
+  id                 Int      @id @default(1)
+  logoUrl            String?
+  mision             String   @db.Text // "Ejecutar proyectos comunitarios..."
+  vision             String   @db.Text // "Crear oportunidades..."
+  valores            String   @db.Text // "Compromiso, solidaridad, inclusion..."
+  telefonoEmergencia String? // 098 274 0049
+  emailContacto      String?
+  redesSociales      Json?    // { facebook: "...", instagram: "..." }
+  updatedAt          DateTime @updatedAt
+}
