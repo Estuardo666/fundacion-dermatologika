@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Facebook, Instagram } from "lucide-react";
 import LinkButton from "@/components/atoms/LinkButton";
 
 const navLinks = [
@@ -14,6 +16,11 @@ const navLinks = [
 
 const WA_LINK =
   "https://wa.me/593989786490?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20Fundaci%C3%B3n%20Dermatol%C3%B3gika";
+
+const socialLinks = [
+  { href: "https://www.facebook.com/fundaciondermatologika/?locale=es_LA", label: "Facebook", Icon: Facebook },
+  { href: "https://www.instagram.com/fundaciondermatologika/", label: "Instagram", Icon: Instagram },
+];
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -73,7 +80,7 @@ export default function Header() {
     >
       <nav
         className={`mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 transition-[padding] duration-500 ${
-          scrolled ? "py-3" : "pt-10 pb-5"
+          scrolled ? "py-3" : "py-3 sm:pt-10 sm:pb-5"
         }`}
         aria-label="Navegación principal"
       >
@@ -128,7 +135,26 @@ export default function Header() {
         </ul>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:flex">
+        <div className="hidden items-center gap-2 lg:flex">
+          {socialLinks.map(({ href, label, Icon }) => (
+            <motion.a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Abrir ${label}`}
+              whileHover={{ y: -2, scale: 1.04 }}
+              whileTap={{ scale: 0.98 }}
+              className={`flex h-10 w-10 items-center justify-center rounded-full border transition-colors duration-300 ${
+                scrolled
+                  ? "border-[color:color-mix(in_srgb,var(--institutional-green)_30%,white)] bg-white text-[var(--semi-dark-gray)] hover:text-[var(--institutional-green)]"
+                  : "border-white/55 bg-white/12 text-white hover:bg-white/18"
+              }`}
+            >
+              <Icon className="h-4.5 w-4.5" strokeWidth={2.1} aria-hidden="true" />
+            </motion.a>
+          ))}
+
           <LinkButton
             href={WA_LINK}
             variant="primary"
@@ -171,38 +197,44 @@ export default function Header() {
       </nav>
 
       {/* Mobile menu dropdown */}
-      {menuOpen ? (
-        <div
-          className="border-t border-[color:color-mix(in_srgb,var(--institutional-green)_12%,white)] bg-white/96 px-4 pb-6 pt-3 backdrop-blur-md lg:hidden"
-        >
-            <ul className="flex flex-col gap-0.5" role="list">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => { e.preventDefault(); scrollToSection(link.href, () => setMenuOpen(false)); }}
-                    className="block rounded-2xl px-4 py-3 text-[1rem] font-medium text-[var(--semi-dark-gray)] transition-all duration-200 hover:bg-[color:color-mix(in_srgb,var(--institutional-green)_9%,white)] hover:text-[var(--institutional-green)]"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+      <AnimatePresence>
+        {menuOpen ? (
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            className="border-t border-[color:color-mix(in_srgb,var(--institutional-green)_12%,white)] bg-white/96 px-4 pb-6 pt-3 backdrop-blur-md lg:hidden"
+          >
+              <ul className="flex flex-col gap-0.5" role="list">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      onClick={(e) => { e.preventDefault(); scrollToSection(link.href, () => setMenuOpen(false)); }}
+                      className="block rounded-2xl px-4 py-3 text-[1rem] font-medium text-[var(--semi-dark-gray)] transition-all duration-200 hover:bg-[color:color-mix(in_srgb,var(--institutional-green)_9%,white)] hover:text-[var(--institutional-green)]"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
 
-            <div className="mt-4">
-              <LinkButton
-                href={WA_LINK}
-                variant="primary"
-                external
-                className="w-full justify-center gap-2"
-                aria-label="Contáctanos por WhatsApp"
-              >
-                <WhatsAppIcon className="h-4 w-4" />
-                Contáctanos por WhatsApp
-              </LinkButton>
-            </div>
-        </div>
-      ) : null}
+              <div className="mt-4">
+                <LinkButton
+                  href={WA_LINK}
+                  variant="primary"
+                  external
+                  className="w-full justify-center gap-2"
+                  aria-label="Contáctanos por WhatsApp"
+                >
+                  <WhatsAppIcon className="h-4 w-4" />
+                  Contáctanos por WhatsApp
+                </LinkButton>
+              </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </header>
   );
 }

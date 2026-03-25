@@ -145,11 +145,15 @@ export default function CdiSection() {
   const measureCarousel = useCallback(() => {
     if (!viewportRef.current || !trackRef.current) return;
 
+    const viewportWidth = viewportRef.current.clientWidth;
     const children = Array.from(trackRef.current.children) as HTMLElement[];
     if (!children.length) return;
 
-    const offsets = children.map((child) => child.offsetLeft);
     const maxOffset = Math.max(0, trackRef.current.scrollWidth - viewportRef.current.clientWidth);
+    const offsets = children.map((child) => {
+      const centeredOffset = child.offsetLeft - (viewportWidth - child.offsetWidth) / 2;
+      return Math.max(0, Math.min(centeredOffset, maxOffset));
+    });
 
     setCardOffsets(offsets);
     setDragLimit(maxOffset);
