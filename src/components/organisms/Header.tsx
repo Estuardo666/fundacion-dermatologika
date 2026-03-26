@@ -8,7 +8,7 @@ import LinkButton from "@/components/atoms/LinkButton";
 
 const navLinks = [
   { href: "#inicio", label: "Inicio" },
-  { href: "#nosotros", label: "Quienes Somos" },
+  { href: "#nosotros", label: "Quiénes Somos" },
   { href: "#objetivos", label: "Objetivos" },
   { href: "#impacto", label: "Impacto Social" },
   { href: "#cdi-section", label: "Centros CDI" },

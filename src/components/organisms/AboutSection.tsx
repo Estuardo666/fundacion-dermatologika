@@ -57,7 +57,7 @@ export default function AboutSection() {
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:gap-16">
           <motion.div variants={itemVariants} className="max-w-[42rem]">
             <Pretitle size="md" className="mb-5 min-w-[9.5rem] justify-center">
-              QUIENES SOMOS
+              QUIÉNES SOMOS
             </Pretitle>
             <h2 className="max-w-[10ch] text-[clamp(2.1rem,4.1vw,3.7rem)] font-semibold leading-[0.94] tracking-tight text-[var(--semi-dark-gray)]">
               Empatía y Desarrollo Comunitario

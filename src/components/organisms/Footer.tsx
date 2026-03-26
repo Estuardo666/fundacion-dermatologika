@@ -31,14 +31,14 @@ const itemVariants = {
 
 const quickLinks = [
   { href: "#inicio", label: "Inicio" },
-  { href: "#nosotros", label: "Quienes Somos" },
+  { href: "#nosotros", label: "Quiénes Somos" },
   { href: "#objetivos", label: "Objetivos" },
   { href: "#impacto", label: "Impacto Social" },
 ];
 
 const legalLinks = [
-  { href: "/legal/terminos-y-condiciones", label: "Terminos y condiciones" },
-  { href: "/legal/politica-de-privacidad", label: "Politica de privacidad" },
+  { href: "/legal/terminos-y-condiciones", label: "Términos y condiciones" },
+  { href: "/legal/politica-de-privacidad", label: "Política de privacidad" },
   { href: "/legal/base-legal", label: "Base legal" },
 ];
 
@@ -68,7 +68,7 @@ export default function Footer() {
               <div className="relative h-28 w-28 sm:h-32 sm:w-32 lg:h-36 lg:w-36">
                 <Image
                   src="/logos/cropped-Asset-1.png"
-                  alt="Logo de Fundacion Dermatologika"
+                  alt="Logo de Fundación Dermatológika"
                   fill
                   sizes="(min-width: 1024px) 144px, 128px"
                   className="object-contain"
@@ -79,17 +79,17 @@ export default function Footer() {
                 <div className="flex items-start gap-3">
                   <MapPin className="mt-1 h-4 w-4 shrink-0 text-[#d9f0bb]" aria-hidden="true" />
                   <p className="text-[1rem] leading-[1.35] text-white/82">
-                    Barrio Daniel Alvarez, Calle Francisco Santander, Loja, Ecuador.
+                    Barrio Daniel Álvarez, Calle Francisco Santander, Loja, Ecuador.
                   </p>
                 </div>
                 <p className="max-w-[19rem] text-[1rem] leading-[1.65] text-white/78">
-                  Salud, educacion y accion comunitaria sostenida para la infancia, las familias y los territorios mas vulnerables.
+                  Salud, educación y acción comunitaria sostenida para la infancia, las familias y los territorios más vulnerables.
                 </p>
               </div>
             </div>
 
             <p className="text-sm leading-7 text-white/68">
-              © 2026 Fundacion Dermatologika Transformando Vidas. Todos los derechos reservados.
+              © 2026 Fundación Dermatológika Transformando Vidas. Todos los derechos reservados.
             </p>
           </motion.div>
 
@@ -103,7 +103,7 @@ export default function Footer() {
               Contacto directo
             </p>
             <p className="mt-4 text-[1rem] leading-[1.65] text-white/82 sm:text-[1.04rem]">
-              Coordinamos acompanamiento social y atencion cercana para cada familia.
+              Coordinamos acompañamiento social y atención cercana para cada familia.
             </p>
 
             <div className="mt-8 space-y-4">

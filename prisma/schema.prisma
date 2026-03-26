@@ -43,11 +43,11 @@ model Campania {
   createdAt DateTime @default(now())
 }
 
-// Modelo para Servicios Medicos y Educacion
+// Modelo para Servicios Médicos y Educación
 model Servicio {
   id          Int    @id @default(autoincrement())
   pretitulo   String // Obligatorio: Ej: "CUIDADO ESPECIALIZADO"
-  nombre      String // Ej: "Fotoproteccion y Prevencion"
+  nombre      String // Ej: "Fotoprotección y Prevención"
   descripcion String @db.Text
   icono       String? // Nombre del icono de Lucide
   orden       Int    @default(0)

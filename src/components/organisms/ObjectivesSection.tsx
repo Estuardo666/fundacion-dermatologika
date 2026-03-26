@@ -194,13 +194,13 @@ export default function ObjectivesSection() {
               <div className="relative flex items-start justify-between gap-4">
                 <div className="max-w-2xl">
                   <p className="text-[0.74rem] font-semibold uppercase tracking-[0.24em] text-[#6eb72b]">
-                    Objetivos de la Fundacion
+                    Objetivos de la Fundación
                   </p>
                   <h3 id="objectives-dialog-title" className="mt-3 text-[clamp(1.9rem,3.5vw,3rem)] font-semibold leading-[0.96] tracking-tight text-[#1c271d]">
-                    Ruta de acompanamiento y proteccion integral
+                    Ruta de acompañamiento y protección integral
                   </h3>
                   <p className="mt-3 max-w-xl text-[1rem] leading-[1.65] text-[#4b544d] sm:text-[1.04rem]">
-                    Estos objetivos articulan la atencion diaria, el trabajo con familias y la red institucional que acompana a la primera infancia.
+                    Estos objetivos articulan la atención diaria, el trabajo con familias y la red institucional que acompaña a la primera infancia.
                   </p>
                 </div>
 

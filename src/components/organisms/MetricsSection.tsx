@@ -15,22 +15,22 @@ type MetricItem = {
 const metrics: MetricItem[] = [
   {
     eyebrow: "Cobertura infantil",
-    label: "Ninos atendidos",
+    label: "Niños atendidos",
     value: 300,
     suffix: "+",
-    description: "Atencion cercana y acompanamiento diario para la primera infancia en situacion de vulnerabilidad.",
+    description: "Atención cercana y acompañamiento diario para la primera infancia en situación de vulnerabilidad.",
   },
   {
     eyebrow: "Presencia territorial",
     label: "Centros activos",
     value: 6,
-    description: "Red operativa de centros donde sostenemos cuidado, alimentacion y estimulacion temprana.",
+    description: "Red operativa de centros donde sostenemos cuidado, alimentación y estimulación temprana.",
   },
   {
     eyebrow: "Jornada diaria",
-    label: "Horas de atencion",
+    label: "Horas de atención",
     value: 8,
-    description: "Acompanamiento continuo durante la jornada para fortalecer bienestar, rutinas y desarrollo integral.",
+    description: "Acompañamiento continuo durante la jornada para fortalecer bienestar, rutinas y desarrollo integral.",
   },
 ];
 
@@ -109,7 +109,7 @@ export default function MetricsSection() {
                 Nuestro alcance
               </Pretitle>
                 <h2 className="mt-4 max-w-[20ch] text-[clamp(2.1rem,4.1vw,3.7rem)] font-semibold leading-[0.94] tracking-tight text-[var(--semi-dark-gray)]">
-                Atencion sostenida que se vive cada dia
+                Atención sostenida que se vive cada día
               </h2>
             </div>
           </motion.div>
