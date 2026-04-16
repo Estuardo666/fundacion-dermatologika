@@ -108,12 +108,12 @@ export default function Footer() {
 
             <div className="mt-8 space-y-4">
               <motion.a
-                href="tel:0989786490"
+                href="tel:0985896490"
                 className="flex items-center gap-3 text-[1.45rem] font-semibold leading-none tracking-tight text-white transition-colors hover:text-[#d9f0bb] sm:text-[1.6rem]"
                 whileHover={{ x: 4 }}
               >
                 <Phone className="h-5 w-5 text-[#d9f0bb]" aria-hidden="true" />
-                <span>098 978 6490</span>
+                <span>098 589 6490</span>
               </motion.a>
               <motion.a
                 href="mailto:info@fundaciondermatologika.org"
@@ -124,12 +124,12 @@ export default function Footer() {
                 <span className="break-all">info@fundaciondermatologika.org</span>
               </motion.a>
               <motion.a
-                href="tel:0987262936"
+                href="tel:0934982936"
                 className="flex items-center gap-3 text-[1rem] leading-[1.6] text-white/82 transition-colors hover:text-white"
                 whileHover={{ x: 4 }}
               >
                 <Phone className="h-4.5 w-4.5 text-[#d9f0bb]" aria-hidden="true" />
-                <span>098 726 2936</span>
+                <span>093 498 2936</span>
               </motion.a>
             </div>
           </motion.div>

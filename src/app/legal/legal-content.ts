@@ -1,6 +1,6 @@
 export const legalContact = {
   address: "Manuel Rosas 683-73 entre José Artiagas y Francisco Santander",
-  phone: "0989786490",
+  phone: "0985896490",
   email: "coordinacionproyectos@fundaciondermatologika.org",
 };
 
