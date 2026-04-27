@@ -15,7 +15,7 @@ const navLinks = [
 ];
 
 const WA_LINK =
-  "https://wa.me/593985896490?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20Fundaci%C3%B3n%20Dermatol%C3%B3gika";
+  "https://wa.me/593989786490?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20Fundaci%C3%B3n%20Dermatol%C3%B3gika";
 
 const socialLinks = [
   { href: "https://www.facebook.com/fundaciondermatologika/?locale=es_LA", label: "Facebook", Icon: Facebook },
