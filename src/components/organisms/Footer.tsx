@@ -184,8 +184,10 @@ export default function Footer() {
             </div>
           </motion.div>
         </div>
-        <div className="mt-16 border-t border-white/8 pt-8 text-center text-sm text-white/60">
-          <p>Desarrollado por Stuart 🇪🇨</p>
+        <div className="mt-16 border-t border-white/8 pt-8 flex justify-center">
+          <span className="inline-flex items-center rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#1f5f26]">
+            Sitio en desarrollo por Stuart 🇪🇨
+          </span>
         </div>
       </motion.div>
     </footer>
